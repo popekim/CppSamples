@@ -72,7 +72,6 @@ namespace samples
 		Fout << info.FirstName << setw(4) << right
 			<< info.LastName << ": " << info.StudentID << "," << info.Score;
 	}
-}
 
 	void UpdateRecordsExample()
 	{

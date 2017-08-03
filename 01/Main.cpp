@@ -1,7 +1,6 @@
 #include "AddIntegers.h"
 #include "HelloPope.h"
 #include "HiPope.h"
-#include "MirrorString.h"
 #include "PrintAll.h"
 #include "PrintMenu.h"
 #include "ReverseInputString.h"

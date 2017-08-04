@@ -10,5 +10,9 @@ struct Record
 
 namespace samples
 {
+	void InputRecords(Record* info);
+	
 	void ManageRecordsExample();
+
+	void PrintRecords(const Record* const info, std::ofstream* const filestream, const int existingStudents);
 }

@@ -9,16 +9,16 @@ namespace samples
 {
 	void PrintRecordExample()
 	{
-		string record = "Pope Kim A12345678 18";
+		string firstName = "Pope";
+		string lastName = "Kim";
+		string studentID = "A12345678";
+		string score = "80";
 
-		istringstream inputStream(record);
+		istringstream inputStream;
 		ostringstream outputStream;
 
-		for (size_t i = 0; i < 4; i++)
-		{
-			inputStream >> record;
-			outputStream << record << " ";
-		}
+		inputStream >> firstName >> lastName >> studentID >> score;
+		outputStream << firstName << " " << lastName << " "<< studentID << " " << score;
 		cout << outputStream.str() << endl;
 	}
 }

@@ -1,5 +1,5 @@
 #include <iostream>
-#include<string>
+#include <string>
 #include "MirrorString.h"
 
 using namespace std;
@@ -10,7 +10,7 @@ namespace samples
 	{
 		string line = "Hello World!";
 
-		for (size_t i = line.length(); i--> 0;)
+		for (int i = line.length() - 1; i >= 0; --i)
 		{
 			line += line[i];
 		}

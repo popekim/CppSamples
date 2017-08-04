@@ -1,23 +1,14 @@
 #pragma once
 
-enum InputOrder
+struct Record
 {
-	FirstName,
-	LastName,
-	StudentID,
-	Score
-};
-
-struct record
-{
-	char FirstName[10];
-	char LastName[10];
-	char StudentID[10];
-	int Score;
+	string FirstName;
+	string LastName;
+	string StudentID;
+	unsigned int Score;
 };
 
 namespace samples
 {
-	void WriteRecordsExample();
-	void UpdateRecordsExample();
+	void ManageRecordsExample();
 }

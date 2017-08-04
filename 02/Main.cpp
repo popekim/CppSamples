@@ -13,8 +13,7 @@ int main()
 	//PrintRecordExample();
 
 	// 3. File I/O
-	// WriteRecordsExample();
-	// UpdateRecordsExample();
+	//ManageRecordsExample();
 
 	//Put more example here...
 }

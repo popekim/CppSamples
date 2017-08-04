@@ -2,36 +2,36 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="1. Mirror String">
-      <UniqueIdentifier>{be5fb47f-bef1-4f93-a3b6-057b9e197ffb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="2. Stringstream">
-      <UniqueIdentifier>{5201131b-0eae-4f7c-a524-c8dc7b9763e1}</UniqueIdentifier>
+      <UniqueIdentifier>{e5a4d6f6-a289-424b-bc24-23effd3db790}</UniqueIdentifier>
     </Filter>
     <Filter Include="3. File I/O">
-      <UniqueIdentifier>{58134786-e843-4dff-9732-9132f26389b1}</UniqueIdentifier>
+      <UniqueIdentifier>{5cf0e715-d007-470d-8666-10829ec42d56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2. StringStream">
+      <UniqueIdentifier>{521554f7-0750-4c1e-81d6-658b2442e6bc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MirrorString.cpp">
+      <Filter>1. Mirror String</Filter>
+    </ClCompile>
     <ClCompile Include="PrintRecord.cpp">
-      <Filter>2. Stringstream</Filter>
+      <Filter>2. StringStream</Filter>
     </ClCompile>
     <ClCompile Include="PrintRecords.cpp">
       <Filter>3. File I/O</Filter>
     </ClCompile>
-    <ClCompile Include="MirrorString.cpp">
-      <Filter>1. Mirror String</Filter>
-    </ClCompile>
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MirrorString.h">
+      <Filter>1. Mirror String</Filter>
+    </ClInclude>
     <ClInclude Include="PrintRecord.h">
-      <Filter>2. Stringstream</Filter>
+      <Filter>2. StringStream</Filter>
     </ClInclude>
     <ClInclude Include="PrintRecords.h">
       <Filter>3. File I/O</Filter>
-    </ClInclude>
-    <ClInclude Include="MirrorString.h">
-      <Filter>1. Mirror String</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

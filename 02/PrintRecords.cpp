@@ -7,95 +7,141 @@ using namespace std;
 
 namespace samples
 {
-	void InputRecords(Record* info)
+	Record InputRecord(Record record)
 	{
 		cout << "First name: ";
-		cin >> info->FirstName;
+		cin >> record.FirstName;
 		
 		cout << "Last name: ";
-		cin >> info->LastName;
+		cin >> record.LastName;
 		
 		cout << "Student ID: ";
-		cin >> info->StudentID;
+		cin >> record.StudentID;
 
 		cout << "Score:  ";
-		cin >> info->Score;
+		cin >> record.Score;
+
+		return record;
 	}
 
 	void ManageRecordsExample()
 	{
-		Record studentInfos[5];
-		ofstream fileStream("studentRecords.dat", ios_base::out);
+		Record record;
 
-		int existingStudents = 1;
+		ofstream outputStream("studentRecords.dat");
+		ifstream inputStream("studentRecords.dat");
 
-		studentInfos[0].FirstName = "Pope";
-		studentInfos[0].LastName = "Kim";
-		studentInfos[0].StudentID = "A12345678";
-		studentInfos[0].Score = 80;
+		int recordCount = 0;
 
-		PrintRecords(&studentInfos[0], &fileStream, existingStudents);
+		record.FirstName = "Pope";
+		record.LastName = "Kim";
+		record.StudentID = "A12345678";
+		record.Score = "80";
+
+		WriteFileRecord(&outputStream, record, true, &recordCount);
 
 		while (true)
 		{
 			char input;
 
-			cout << "a: adds another student info. " << "b : Modifies existing info. " << endl;
+			cout << "a: add a student record. " << "b: Modify a student record. " << "x: exit" << endl;
 			cin >> input;
+
+			if (cin.fail())
+			{
+				cin.ignore();
+				cin.clear();
+				
+				cout << "Wrong input. " << endl;
+				continue;
+			}
 
 			if (input == 'a')
 			{
-				existingStudents++;
-
-				if (existingStudents > 5)
-				{
-					cout << "Addable amount exceeded" << endl;
-					break;
-				}
-				InputRecords(&studentInfos[existingStudents - 1]);
+				InputRecord(record);
+				WriteFileRecord(&outputStream, record, true , &recordCount);
 			}
 		
-			else if (input == 'b')
+			if (input == 'b')
 			{
+				int newLineCount = 0;
 				int studentNumber;
 
-				cout << "Select one number which you wanna modify from 1 to 5."
-					<< "(Current exsiting students: " << existingStudents << ")" << ": ";
+				char fileCharacter;
+
+				cout << "Which student do you wanna modify?" << "[range : 1 to recordCount]";
 				cin >> studentNumber;
-
-				if (studentNumber > 0 && studentNumber <= existingStudents)
+				
+				if (cin.fail())
 				{
-					InputRecords(&studentInfos[existingStudents - 1]);
-					cout << "Modified. " << endl;
+					cin.ignore();
+					cin.clear();
+
+					cout << "Wrong input. " << endl;
+					continue;
 				}
 
-				else
+				while (newLineCount != studentNumber - 1)
 				{
-					cout << "Out of range. " << endl;
-					break;
+					inputStream.get(fileCharacter);
+
+					if (fileCharacter == '\n')
+					{
+						newLineCount++;
+					}
 				}
+				InputRecord(record);
+				WriteFileRecord(&outputStream, record, false, &recordCount);
 			}
 
-			else
+			if (input == 'x')
 			{
 				break;
 			}
-			PrintRecords(studentInfos, &fileStream, existingStudents);
+
+			PrintRecords(&inputStream, recordCount);
 		}
-		fileStream.close();
+		inputStream.close();
+		outputStream.close();
 	}
 
-	void PrintRecords(const Record* const info, ofstream* const filestream, const int existingStudents)
+	void PrintRecords(ifstream* inputStream, int printCount)
 	{
-		filestream->seekp(0);
+		string record;
 
-		for (size_t i = 0; i < existingStudents; i++)
+		for (size_t i = 0; i < printCount; ++i)
 		{
-			*filestream << info[i].FirstName << " " << info[i].LastName << " "
-				<< info[i].StudentID << " " << info[i].Score << endl;
-		
-			cout << info[i].FirstName << " " << info[i].LastName << " "
-				<< info[i].StudentID << " " << info[i].Score << endl;
+			getline(*inputStream, record);
+			cout << record << endl;
 		}
+	}
+
+	void WriteFileRecord(std::ofstream* outputStream, Record record, bool bAddRecordCount, int* recordCount)
+	{
+		const size_t nameByte = 20;
+		const size_t IDByte = 9;
+		const size_t scoreByte = 3;
+
+		outputStream->setf(ios::left);
+
+		*outputStream << record.FirstName;
+		outputStream->seekp(nameByte - record.FirstName.length(), ios::cur);
+
+		*outputStream << record.LastName;
+		outputStream->seekp(nameByte - record.LastName.length(), ios::cur);
+
+		*outputStream << record.StudentID;
+		outputStream->seekp(IDByte - record.StudentID.length(), ios::cur);
+
+		*outputStream << record.Score;
+		outputStream->seekp(scoreByte - record.Score.length(), ios::cur);
+
+		*outputStream << '\n';
+
+		if (!bAddRecordCount)
+		{
+			return;
+		}
+		*recordCount++;
 	}
 }

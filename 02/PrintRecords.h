@@ -5,14 +5,16 @@ struct Record
 	string FirstName;
 	string LastName;
 	string StudentID;
-	unsigned int Score;
+	string Score;
 };
 
 namespace samples
 {
-	void InputRecords(Record* info);
+	Record InputRecord(Record record);
 	
 	void ManageRecordsExample();
 
-	void PrintRecords(const Record* const info, std::ofstream* const filestream, const int existingStudents);
+	void PrintRecords(std::ifstream* inputStream, int printCount);
+
+	void WriteFileRecord(std::ofstream* outputStream, Record record, bool bAddRecordCount, int* recordCount);
 }

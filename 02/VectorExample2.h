@@ -14,6 +14,8 @@ namespace samples
 			// void SetX(int x), void SetY(int y)
 			// int GetX(), int GetY()
 			// void Add(const Vector2& vec)
+		// public destructors
+			// ~Vector2()
 	// 3. In cpp, implement Vector1 class
 		// - use initializer list in the both constructors
 	// 4. In VectorExample1() function, create two Vector2 objects 

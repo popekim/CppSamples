@@ -143,11 +143,15 @@
     <ClCompile Include="MirrorString.cpp" />
     <ClCompile Include="PrintRecord.cpp" />
     <ClCompile Include="PrintRecords.cpp" />
+    <ClCompile Include="VectorExample1.cpp" />
+    <ClCompile Include="VectorExample2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MirrorString.h" />
     <ClInclude Include="PrintRecord.h" />
     <ClInclude Include="PrintRecords.h" />
+    <ClInclude Include="VectorExample1.h" />
+    <ClInclude Include="VectorExample2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

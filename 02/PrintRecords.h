@@ -10,11 +10,11 @@ struct Record
 
 namespace samples
 {
-	Record InputRecord(Record record);
+	Record InputRecord();
 	
 	void ManageRecordsExample();
 
-	void PrintRecords(std::ifstream* inputStream, int printCount);
+	void PrintRecords(std::ifstream& inputStream, int printCount);
 
-	void WriteFileRecord(std::ofstream* outputStream, Record record, bool bAddRecordCount, int* recordCount);
+	void WriteFileRecord(std::ofstream& outputStream, Record& record);
 }

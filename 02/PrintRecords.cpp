@@ -1,3 +1,4 @@
+#include <cassert>
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -7,14 +8,16 @@ using namespace std;
 
 namespace samples
 {
-	Record InputRecord(Record record)
+	Record InputRecord()
 	{
+		Record record;
+
 		cout << "First name: ";
 		cin >> record.FirstName;
-		
+
 		cout << "Last name: ";
 		cin >> record.LastName;
-		
+
 		cout << "Student ID: ";
 		cin >> record.StudentID;
 
@@ -32,13 +35,15 @@ namespace samples
 		ifstream inputStream("studentRecords.dat");
 
 		int recordCount = 0;
+		const int END_OF_LINE = 52;
 
 		record.FirstName = "Pope";
 		record.LastName = "Kim";
 		record.StudentID = "A12345678";
 		record.Score = "80";
 
-		WriteFileRecord(&outputStream, record, true, &recordCount);
+		WriteFileRecord(outputStream, record);
+		++recordCount;
 
 		while (true)
 		{
@@ -49,99 +54,89 @@ namespace samples
 
 			if (cin.fail())
 			{
-				cin.ignore();
-				cin.clear();
-				
 				cout << "Wrong input. " << endl;
-				continue;
-			}
-
-			if (input == 'a')
-			{
-				InputRecord(record);
-				WriteFileRecord(&outputStream, record, true , &recordCount);
-			}
-		
-			if (input == 'b')
-			{
-				int newLineCount = 0;
-				int studentNumber;
-
-				char fileCharacter;
-
-				cout << "Which student do you wanna modify?" << "[range : 1 to recordCount]";
-				cin >> studentNumber;
-				
-				if (cin.fail())
-				{
-					cin.ignore();
-					cin.clear();
-
-					cout << "Wrong input. " << endl;
-					continue;
-				}
-
-				while (newLineCount != studentNumber - 1)
-				{
-					inputStream.get(fileCharacter);
-
-					if (fileCharacter == '\n')
-					{
-						newLineCount++;
-					}
-				}
-				InputRecord(record);
-				WriteFileRecord(&outputStream, record, false, &recordCount);
-			}
-
-			if (input == 'x')
-			{
 				break;
 			}
+			cin.ignore(LLONG_MAX, '\n');
 
-			PrintRecords(&inputStream, recordCount);
+			int newLineCount = 0;
+			int studentNumber;
+
+			switch (input)
+			{
+			case 'a':
+				++recordCount;
+				record = InputRecord();
+				WriteFileRecord(outputStream, record);
+				break;
+
+			case 'b':
+				cout << "Which student do you wanna modify?" << "[range : 1 to " << recordCount << "]";
+				cin >> studentNumber;
+
+				if (cin.fail())
+				{
+					cout << "Wrong input. " << endl;
+					break;
+				}
+				cin.ignore(LLONG_MAX, '\n');
+
+				outputStream.seekp(END_OF_LINE * (studentNumber - 1));
+				outputStream << '\n';
+
+				for (size_t i = 0; i < END_OF_LINE; ++i)
+				{
+					outputStream << " ";
+				}
+				outputStream.seekp(-END_OF_LINE, ios::cur);
+
+				record = InputRecord();
+				WriteFileRecord(outputStream, record);
+				break;
+
+			case 'x':
+				return;
+
+			default:
+				assert(false);
+				break;
+			}
+			PrintRecords(inputStream, recordCount);
 		}
 		inputStream.close();
 		outputStream.close();
 	}
 
-	void PrintRecords(ifstream* inputStream, int printCount)
+void PrintRecords(ifstream& inputStream, int printCount)
+{
+	string record;
+
+	for (size_t i = 0; i < printCount; ++i)
 	{
-		string record;
-
-		for (size_t i = 0; i < printCount; ++i)
-		{
-			getline(*inputStream, record);
-			cout << record << endl;
-		}
+		getline(inputStream, record);
+		cout << record << endl;
 	}
+}
 
-	void WriteFileRecord(std::ofstream* outputStream, Record record, bool bAddRecordCount, int* recordCount)
-	{
-		const size_t nameByte = 20;
-		const size_t IDByte = 9;
-		const size_t scoreByte = 3;
+void WriteFileRecord(ofstream& outputStream, Record& record)
+{
+	const size_t NAME_BYTE = 20;
+	const size_t ID_BYTE = 9;
+	const size_t SCORE_BYTE = 3;
 
-		outputStream->setf(ios::left);
+	outputStream.setf(ios::left);
 
-		*outputStream << record.FirstName;
-		outputStream->seekp(nameByte - record.FirstName.length(), ios::cur);
+	outputStream << record.FirstName;
+	outputStream.seekp(NAME_BYTE - record.FirstName.length(), ios::cur);
 
-		*outputStream << record.LastName;
-		outputStream->seekp(nameByte - record.LastName.length(), ios::cur);
+	outputStream << record.LastName;
+	outputStream.seekp(NAME_BYTE - record.LastName.length(), ios::cur);
 
-		*outputStream << record.StudentID;
-		outputStream->seekp(IDByte - record.StudentID.length(), ios::cur);
+	outputStream << record.StudentID;
+	outputStream.seekp(ID_BYTE - record.StudentID.length(), ios::cur);
 
-		*outputStream << record.Score;
-		outputStream->seekp(scoreByte - record.Score.length(), ios::cur);
+	outputStream << record.Score;
+	outputStream.seekp(SCORE_BYTE - record.Score.length(), ios::cur);
 
-		*outputStream << '\n';
-
-		if (!bAddRecordCount)
-		{
-			return;
-		}
-		*recordCount++;
-	}
+	outputStream << '\n';
 }

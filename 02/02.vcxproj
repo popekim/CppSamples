@@ -143,6 +143,8 @@
     <ClCompile Include="MirrorString.cpp" />
     <ClCompile Include="PrintRecord.cpp" />
     <ClCompile Include="PrintRecords.cpp" />
+    <ClCompile Include="Vector1.cpp" />
+    <ClCompile Include="Vector2.cpp" />
     <ClCompile Include="VectorExample1.cpp" />
     <ClCompile Include="VectorExample2.cpp" />
   </ItemGroup>
@@ -150,6 +152,8 @@
     <ClInclude Include="MirrorString.h" />
     <ClInclude Include="PrintRecord.h" />
     <ClInclude Include="PrintRecords.h" />
+    <ClInclude Include="Vector1.h" />
+    <ClInclude Include="Vector2.h" />
     <ClInclude Include="VectorExample1.h" />
     <ClInclude Include="VectorExample2.h" />
   </ItemGroup>

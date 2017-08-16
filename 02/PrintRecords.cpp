@@ -1,5 +1,6 @@
 #include <cassert>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <string>
 #include "PrintRecords.h"
@@ -35,7 +36,7 @@ namespace samples
 		ifstream inputStream("studentRecords.dat");
 
 		int recordCount = 0;
-		const int END_OF_LINE = 52;
+		const int RECORD_LENGTH = 52;
 
 		record.FirstName = "Pope";
 		record.LastName = "Kim";
@@ -60,7 +61,7 @@ namespace samples
 			cin.ignore(LLONG_MAX, '\n');
 
 			int newLineCount = 0;
-			int studentNumber;
+			int studentIndex;
 
 			switch (input)
 			{
@@ -72,7 +73,7 @@ namespace samples
 
 			case 'b':
 				cout << "Which student do you wanna modify?" << "[range : 1 to " << recordCount << "]";
-				cin >> studentNumber;
+				cin >> studentIndex;
 
 				if (cin.fail())
 				{
@@ -81,14 +82,7 @@ namespace samples
 				}
 				cin.ignore(LLONG_MAX, '\n');
 
-				outputStream.seekp(END_OF_LINE * (studentNumber - 1));
-				outputStream << '\n';
-
-				for (size_t i = 0; i < END_OF_LINE; ++i)
-				{
-					outputStream << " ";
-				}
-				outputStream.seekp(-END_OF_LINE, ios::cur);
+				outputStream.seekp(RECORD_LENGTH * (studentIndex - 1));
 
 				record = InputRecord();
 				WriteFileRecord(outputStream, record);
@@ -101,42 +95,39 @@ namespace samples
 				assert(false);
 				break;
 			}
-			PrintRecords(inputStream, recordCount);
+
+			string consoleRecord;
+
+			for (int i = 0; i < recordCount; ++i)
+			{
+				getline(inputStream, consoleRecord);
+				cout << consoleRecord << endl;
+			}
 		}
 		inputStream.close();
 		outputStream.close();
 	}
 
-void PrintRecords(ifstream& inputStream, int printCount)
-{
-	string record;
-
-	for (size_t i = 0; i < printCount; ++i)
+	void WriteFileRecord(ofstream& outputStream, Record& record)
 	{
-		getline(inputStream, record);
-		cout << record << endl;
+		const int NAME_LENGTH = 20;
+		const int ID_LENGTH = 9;
+		const int SCORE_LENGTH = 3;
+
+		outputStream << left;
+
+		outputStream << record.FirstName;
+		outputStream << setw(NAME_LENGTH - record.LastName.length);
+
+		outputStream << record.LastName;
+		outputStream << setw(NAME_LENGTH - record.LastName.length);
+
+		outputStream << record.StudentID;
+		outputStream << setw(ID_LENGTH - record.StudentID.length());
+
+		outputStream << record.Score;
+		outputStream << setw(SCORE_LENGTH - record.Score.length());
+
+		outputStream << '\n';
 	}
-}
-
-void WriteFileRecord(ofstream& outputStream, Record& record)
-{
-	const size_t NAME_BYTE = 20;
-	const size_t ID_BYTE = 9;
-	const size_t SCORE_BYTE = 3;
-
-	outputStream.setf(ios::left);
-
-	outputStream << record.FirstName;
-	outputStream.seekp(NAME_BYTE - record.FirstName.length(), ios::cur);
-
-	outputStream << record.LastName;
-	outputStream.seekp(NAME_BYTE - record.LastName.length(), ios::cur);
-
-	outputStream << record.StudentID;
-	outputStream.seekp(ID_BYTE - record.StudentID.length(), ios::cur);
-
-	outputStream << record.Score;
-	outputStream.seekp(SCORE_BYTE - record.Score.length(), ios::cur);
-
-	outputStream << '\n';
 }

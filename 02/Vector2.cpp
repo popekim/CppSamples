@@ -1,18 +1,15 @@
 #include "Vector2.h"
 
-Vector2::Vector2() : mX(0), mY(0)
+Vector2::Vector2()
+: mX(0)
+, mY(0)
 {
-
 }
 
-Vector2::Vector2(int x, int y) : mX(x), mY(y)
+Vector2::Vector2(int x, int y)
+: mX(x)
+, mY(y)
 {
-
-}
-
-Vector2::~Vector2()
-{
-
 }
 
 int Vector2::GetX() const

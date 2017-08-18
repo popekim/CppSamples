@@ -14,5 +14,5 @@ namespace samples
 	
 	void ManageRecordsExample();
 
-	void WriteFileRecord(std::ofstream& outputStream, Record& record);
+	void WriteFileRecord(std::ofstream& outputStream, const Record& record);
 }

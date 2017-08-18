@@ -1,4 +1,3 @@
-#include <cassert>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -33,7 +32,6 @@ namespace samples
 		Record record;
 
 		ofstream outputStream("studentRecords.dat");
-		ifstream inputStream("studentRecords.dat");
 
 		int recordCount = 0;
 		const int RECORD_LENGTH = 52;
@@ -92,10 +90,11 @@ namespace samples
 				return;
 
 			default:
-				assert(false);
-				break;
+				cout << "Error occurred" << endl;
+				continue;
 			}
 
+			ifstream inputStream("studentRecords.dat");
 			string consoleRecord;
 
 			for (int i = 0; i < recordCount; ++i)
@@ -103,16 +102,28 @@ namespace samples
 				getline(inputStream, consoleRecord);
 				cout << consoleRecord << endl;
 			}
+			inputStream.close();
 		}
-		inputStream.close();
 		outputStream.close();
 	}
 
-	void WriteFileRecord(ofstream& outputStream, Record& record)
+	void WriteFileRecord(ofstream& outputStream, const Record& record)
 	{
 		const int NAME_LENGTH = 20;
 		const int ID_LENGTH = 9;
 		const int SCORE_LENGTH = 3;
+
+		if (record.FirstName.length() > NAME_LENGTH || record.LastName.length() > NAME_LENGTH
+			|| record.StudentID.length() > ID_LENGTH || record.Score.length() > SCORE_LENGTH)
+		{
+			cout << "Length exceeded. " << endl;
+
+			cout << "The length limit of first & last name : " << NAME_LENGTH << endl;
+			cout << "The length limit of student ID: " << ID_LENGTH << endl;
+			cout << "The length limit of score : " << SCORE_LENGTH << endl;
+
+			return;
+		}
 
 		outputStream << left;
 

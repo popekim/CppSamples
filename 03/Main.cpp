@@ -16,7 +16,7 @@ int main()
 	// 3. Multiplying with a Vector or Scalar in Vector Class
 	OperatorOverloadExample();
 
-	// 4. Animal and Cat Classes
+	// 4. Animal, Cat, Dog Classes
 	InheritanceExample();
 
 	return 0;

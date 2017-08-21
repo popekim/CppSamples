@@ -12,7 +12,7 @@
       <Filter>3. Multiplying with a Vector or Scalar in Vector Class</Filter>
     </ClCompile>
     <ClCompile Include="InheritanceExample.cpp">
-      <Filter>4. Animal and Cat Classes</Filter>
+      <Filter>4. Animal, Cat, Dog Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -25,7 +25,7 @@
     <Filter Include="3. Multiplying with a Vector or Scalar in Vector Class">
       <UniqueIdentifier>{82695e67-7097-4116-a681-db170fa55d49}</UniqueIdentifier>
     </Filter>
-    <Filter Include="4. Animal and Cat Classes">
+    <Filter Include="4. Animal, Cat, Dog Classes">
       <UniqueIdentifier>{f93cf2ed-2993-4f00-b055-bbb6737c7534}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -40,7 +40,7 @@
       <Filter>3. Multiplying with a Vector or Scalar in Vector Class</Filter>
     </ClInclude>
     <ClInclude Include="InheritanceExample.h">
-      <Filter>4. Animal and Cat Classes</Filter>
+      <Filter>4. Animal, Cat, Dog Classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

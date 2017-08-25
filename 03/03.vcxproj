@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -115,17 +115,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animal.cpp" />
+    <ClCompile Include="Cat.cpp" />
     <ClCompile Include="CopyConstructorExample.cpp" />
+    <ClCompile Include="Dog.cpp" />
     <ClCompile Include="InheritanceExample.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="FunctionOverloadExample.cpp" />
+    <ClCompile Include="MyString.cpp" />
     <ClCompile Include="OperatorOverloadExample.cpp" />
+    <ClCompile Include="Vector3.cpp" />
+    <ClCompile Include="Vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animal.h" />
+    <ClInclude Include="Cat.h" />
     <ClInclude Include="CopyConstructorExample.h" />
+    <ClInclude Include="Dog.h" />
     <ClInclude Include="FunctionOverloadExample.h" />
     <ClInclude Include="InheritanceExample.h" />
+    <ClInclude Include="MyString.h" />
     <ClInclude Include="OperatorOverloadExample.h" />
+    <ClInclude Include="Vector3.h" />
+    <ClInclude Include="Vector4.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -14,6 +14,24 @@
     <ClCompile Include="InheritanceExample.cpp">
       <Filter>4. Animal, Cat, Dog Classes</Filter>
     </ClCompile>
+    <ClCompile Include="MyString.cpp">
+      <Filter>1. Copy Constructor with char Array</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>2. Multiplying with a Vector or Scalar in Vector Class</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector4.cpp">
+      <Filter>3. Multiplying with a Vector or Scalar in Vector Class</Filter>
+    </ClCompile>
+    <ClCompile Include="Animal.cpp">
+      <Filter>4. Animal, Cat, Dog Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Cat.cpp">
+      <Filter>4. Animal, Cat, Dog Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="Dog.cpp">
+      <Filter>4. Animal, Cat, Dog Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="1. Copy Constructor with char Array">
@@ -40,6 +58,24 @@
       <Filter>3. Multiplying with a Vector or Scalar in Vector Class</Filter>
     </ClInclude>
     <ClInclude Include="InheritanceExample.h">
+      <Filter>4. Animal, Cat, Dog Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="MyString.h">
+      <Filter>1. Copy Constructor with char Array</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>2. Multiplying with a Vector or Scalar in Vector Class</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector4.h">
+      <Filter>3. Multiplying with a Vector or Scalar in Vector Class</Filter>
+    </ClInclude>
+    <ClInclude Include="Animal.h">
+      <Filter>4. Animal, Cat, Dog Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Cat.h">
+      <Filter>4. Animal, Cat, Dog Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Dog.h">
       <Filter>4. Animal, Cat, Dog Classes</Filter>
     </ClInclude>
   </ItemGroup>

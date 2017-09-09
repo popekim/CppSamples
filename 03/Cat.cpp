@@ -3,26 +3,21 @@
 
 using namespace std;
 
-Cat::Cat()
-{
-	cout << "Cat : constructor" << endl;
-}
-
-Cat::Cat(int age, const char* name)
+Cat::Cat(int age, const char* catHabit)
 	: Animal(age)
 {
-	size_t size = strlen(name) + 1;
-	mName = new char[size];
-	strcpy(mName, name);
+	size_t size = strlen(catHabit) + 1;
+	mCatHabit = new char[size];
+	strcpy(mCatHabit, catHabit);
 }
 
 Cat::~Cat()
 {
-	delete[] mName;
+	delete[] mCatHabit;
 	cout << "Cat : destructor" << endl;
 }
 
-char* Cat::GetName() const
+const char* Cat::GetCatHabit() const
 {
-	return mName;
+	return mCatHabit;
 }

@@ -14,16 +14,19 @@ namespace samples
 		
 		Vector3 vector1(3, 5);
 		Vector3 vector2(7, 9);
+		const float DECIMAL = 0.5f;
 
-		const int SCALAR = 8;
+		cout << "vector1 member variables - " << vector1 << endl;
+
+		cout << "Result - Mutliply function (const Vector3&) - " << vector1.Multiply(vector1, vector2) << endl;
+		cout << "Result - Mutliply function (const float DECIMAL) - " << vector1.Multiply(vector1, DECIMAL) << endl;
+
+		cout << "vector1 member variables - " << vector1 << endl;
 		
-		vector1.PrintMember();
-		vector2.PrintMember();
+		vector1.Scale(vector1, vector2);
+		cout << "Result - Scale function (const Vector3&) -  " << vector1 << endl;
 
-		cout << "Result (Dot product) : " << vector1.Multiply(vector2);
-
-		vector1.Multiply(SCALAR);
-		cout << "Result (Scalar Multiplication) : " << "Vector1: " ;
-		vector1.PrintMember();
+		vector1.Scale(vector1, DECIMAL);
+		cout << "Result - Scale function (const float DECIMAL) -  " << vector1 << endl;
 	}
 }

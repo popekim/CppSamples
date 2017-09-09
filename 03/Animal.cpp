@@ -4,6 +4,7 @@
 using namespace std;
 
 Animal::Animal()
+	: mAge(0)
 {
 	cout << "Animal : constructor" << endl;
 }
@@ -11,11 +12,6 @@ Animal::Animal()
 Animal::Animal(int age)
 	: mAge(age)
 {
-}
-
-Animal::~Animal()
-{
-	cout << "Animal : destructor" << endl;
 }
 
 int Animal::GetAge() const

@@ -5,13 +5,13 @@
 class Vector4
 {
 public:
-	Vector4(int x, int y);
+	Vector4(int vector1, int vector2);
 
-	int operator*(const Vector4& reference) const;
+	int operator*(const Vector4& vector) const;
 	friend void operator*(Vector4& vector, const int SCALAR);
 	friend std::ostream& operator<<(std::ostream& ostream, const Vector4& vector);
 
-private:
+private:	
 	int mX;
 	int mY;
 };

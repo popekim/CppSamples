@@ -15,12 +15,13 @@ namespace samples
 		Vector4 vector1(3, 5);
 		Vector4 vector2(7, 9);
 
-		const int SCALRA = 8;
+		const int SCALAR = 8;
 
-		cout << "Result (Dot product) : " << vector1 * vector2<< endl;
+		cout << "vector1 member variables : " << vector1 << endl;
+
+		cout << "Result - Dot product : " << vector1 * vector2<< endl;
 		
-		cout << "Before doing Scalar Multiplication : " << "Vector1: " << vector1 << endl;
-		vector1 * SCALRA;
-		cout << "Result (Scalar Multiplication) : " << "Vector1 : " << vector1 << endl;
+		vector1 * SCALAR;
+		cout << "Result - Scalar Multiplication : " << vector1 << endl;
 	}
 }

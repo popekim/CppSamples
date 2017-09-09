@@ -5,12 +5,11 @@
 class Dog : public Animal
 {
 public:
-	Dog();
-	Dog(int age, const char* size);
+	Dog(int age, const char* dogHabit);
 	~Dog();
 
-	char* GetSize() const;
+	const char* GetDogHabit() const;
 
 private:
-	char* mSize;
+	char* mDogHabit;
 };

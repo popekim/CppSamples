@@ -8,18 +8,23 @@ Vector3::Vector3(int x, int y)
 {
 }
 
-int Vector3::Multiply(const Vector3& reference) const
+Vector3 Vector3::Multiply(Vector3& vector1, const Vector3& vector2)
 {
-	return (reference.mX * reference.mY) + (mX * mY);
+	return vector1* vector2;
 }
 
-void Vector3::Multiply(const int SCALAR)
+Vector3 Vector3::Multiply(Vector3& vector1, const float DECIMAL)
 {
-	mX *= SCALAR;
-	mY *= SCALAR;
+	return vector1 * DECIMAL;
 }
 
-void Vector3::PrintMember() const
+void Vector3::Scale(Vector3& vector1, const Vector3& vector2)
 {
-	std::cout  << "mX : " << mX << ", " << "mY : " << mY << std::endl;
+	vector1 *= vector2;
 }
+
+void Vector3::Scale(Vector3& vector, const float DECIMAL)
+{
+	vector *= DECIMAL;
+}
+

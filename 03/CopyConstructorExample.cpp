@@ -17,8 +17,5 @@ namespace samples
 	
 		myName.PrintString();
 		myNameCopy.PrintString();
-
-		myName.~MyString();
-		myNameCopy.~MyString();
 	}
 }

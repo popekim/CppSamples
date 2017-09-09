@@ -5,17 +5,17 @@
 using namespace std;
 
 MyString::MyString(const char* string)
-	: mCapacity(strlen(string))
-	, mSize(strlen(string))
+	: mSize(strlen(string) + 1)
 {
-	memcpy(mString, string, strlen(string));
+	mString = new char [mSize];
+	memcpy(mString, string, mSize);
 }
 
-MyString::MyString(const MyString& reference)
-	: mCapacity(strlen(reference.mString))
-	, mSize(strlen(reference.mString))
+MyString::MyString(const MyString& string)
+	: mSize(string.mSize)
 {
-	memcpy(mString, reference.mString, strlen(reference.mString));
+	mString = new char[mSize];
+	memcpy(mString, string.mString, mSize);
 }
 
 MyString::~MyString()

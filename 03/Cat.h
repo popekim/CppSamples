@@ -4,12 +4,11 @@
 class Cat : public Animal
 {
 public:
-	Cat();
-	Cat(int age, const char* name);
+	Cat(int age, const char* catHabit);
 	~Cat();
 
-	char* GetName() const;
+	const char* GetCatHabit() const;
 
 private:
-	char* mName;
+	char* mCatHabit;
 };

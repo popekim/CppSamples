@@ -14,22 +14,13 @@ namespace samples
 		cout << "|       Inheritance Example       |" << endl;
 		cout << "+------------------------------+" << endl;
 
-		Cat cat(3, "Kitty");
-		Dog dog(5, "Puppy");
+		Cat cat(3, "Jumping");
+		Dog dog(5, "Drooling");
 
-		Cat* catPtr = new Cat;
-		Dog* dogPtr = new Dog;
+		Cat* catPtr = &cat;
+		Dog* dogPtr = &dog;
 
-		catPtr = &cat;
-		dogPtr = &dog;
-
-		cout << "Cat - " << "Age :" << catPtr->GetAge() << ", " << "Name : " << catPtr->GetName() << endl;
-		cout << "Dog - " << "Age : " << dogPtr->GetAge() << ", " << "Size : " << dogPtr->GetSize() << endl;
-
-		delete[] catPtr;
-		delete[] dogPtr;
-
-		cat.~Cat();
-		dog.~Dog();
+		cout << "Cat - " << "Age :" << catPtr->GetAge() << ", " << "Habit : " << catPtr->GetCatHabit() << endl;
+		cout << "Dog - " << "Age : " << dogPtr->GetAge() << ", " << "Habit : " << dogPtr->GetDogHabit() << endl;
 	}
 }

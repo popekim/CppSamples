@@ -3,26 +3,21 @@
 
 using namespace std;
 
-Dog::Dog()
+Dog::Dog(int age, const char* dogHabit)
+	:Animal()
 {
-	cout << "Dog : constructor" << endl;
-}
-
-Dog::Dog(int age, const char* size)
-	:Animal(age)
-{
-	size_t length = strlen(size) + 1;
-	mSize = new char[length];
-	strcpy(mSize, size);
+	size_t length = strlen(dogHabit) + 1;
+	mDogHabit = new char[length];
+	strcpy(mDogHabit, dogHabit);
 }
 
 Dog::~Dog()
 {
-	delete[] mSize;
+	delete[] mDogHabit;
 	cout << "Dog : destructor" << endl;
 }
 
-char* Dog::GetSize() const
+const char* Dog::GetDogHabit() const
 {
-	return mSize;
+	return mDogHabit;
 }

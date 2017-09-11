@@ -34,14 +34,19 @@ namespace samples
 		return mY;
 	}
 
-	Vector Vector::Multiply(const Vector& v1)
+	bool Vector::IsEqual(const Vector& v) const
 	{
-		Vector result(mX * v1.GetX(), mY * v1.GetY());
+		return (mX == v.mX && mY == v.mY);
+	}
+
+	Vector Vector::Multiply(const Vector& v) const
+	{
+		Vector result(mX * v.GetX(), mY * v.GetY());
 
 		return result;
 	}
 
-	Vector Vector::Multiply(int multiplier)
+	Vector Vector::Multiply(int multiplier) const
 	{
 		Vector result(mX * multiplier, mY * multiplier);
 

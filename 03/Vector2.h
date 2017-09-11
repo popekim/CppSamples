@@ -16,6 +16,8 @@ namespace samples
 		int GetY() const;
 		void SetY(int y);
 
+		bool operator==(const Vector2& rhs) const;
+
 		Vector2 operator*(const Vector2& rhs) const;
 		Vector2 operator*(int multiplier) const;
 		friend Vector2 operator*(int multiplier, const Vector2& v);

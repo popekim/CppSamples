@@ -14,8 +14,9 @@ namespace samples
 		int GetY() const;
 		void SetY(int y);
 		
-		Vector Multiply(const Vector& v);
-		Vector Multiply(int multiplier);
+		bool IsEqual(const Vector& v) const;
+		Vector Multiply(const Vector& v) const;
+		Vector Multiply(int multiplier) const;
 
 		void Scale(const Vector& v);
 		void Scale(int multiplier);

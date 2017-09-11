@@ -9,7 +9,7 @@ namespace samples
 	void FunctionOverloadExample()
 	{
 		cout << "+------------------------------+" << endl;
-		cout << "|       Function Overloading Example       |" << endl;
+		cout << "| Function Overloading Example |" << endl;
 		cout << "+------------------------------+" << endl;
 		
 		Vector vector1(3, 5);
@@ -33,6 +33,5 @@ namespace samples
 		vector1.Scale(multiplier);
 		cout << "vector1.Scale(multiplier)" << endl;
 		cout << "vector1: " << vector1.GetX() << ", " << vector1.GetY() << endl;
-
 	}
 }

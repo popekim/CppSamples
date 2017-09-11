@@ -1,15 +1,15 @@
 #pragma once
 
+#include <string>
 #include "Animal.h"
 
-class Dog : public Animal
+namespace samples
 {
-public:
-	Dog(int age, const char* dogHabit);
-	~Dog();
+	class Dog : public Animal
+	{
+	public:
+		Dog(int age);
 
-	const char* GetDogHabit() const;
-
-private:
-	char* mDogHabit;
-};
+		std::string Bark() const;
+	};
+}

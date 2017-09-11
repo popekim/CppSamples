@@ -11,16 +11,16 @@ namespace samples
 	void InheritanceExample()
 	{
 		cout << "+------------------------------+" << endl;
-		cout << "|       Inheritance Example       |" << endl;
+		cout << "|      Inheritance Example     |" << endl;
 		cout << "+------------------------------+" << endl;
 
-		Cat cat(3, "Jumping");
-		Dog dog(5, "Drooling");
+		Cat cat(3);
+		Dog dog(5);
 
-		Cat* catPtr = &cat;
-		Dog* dogPtr = &dog;
+		cout << "Cat's Age: " << cat.GetAge() << endl;
+		cout << "Cat's Purring: " << cat.Purr() << endl;
 
-		cout << "Cat - " << "Age :" << catPtr->GetAge() << ", " << "Habit : " << catPtr->GetCatHabit() << endl;
-		cout << "Dog - " << "Age : " << dogPtr->GetAge() << ", " << "Habit : " << dogPtr->GetDogHabit() << endl;
+		cout << "Dog's Age: " << dog.GetAge() << endl;
+		cout << "Dog's Barking: " << dog.Bark() << endl;
 	}
 }

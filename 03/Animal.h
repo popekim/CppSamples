@@ -1,13 +1,16 @@
 #pragma once
 
-class Animal
+namespace samples
 {
-public:
-	Animal();
-	Animal(int age);
+	class Animal
+	{
+	public:
+		Animal();
+		Animal(int age);
 
-	int GetAge() const;
+		int GetAge() const;
 
-private:
-	int mAge;
-};
+	private:
+		int mAge;
+	};
+}

@@ -1,20 +1,20 @@
 #include <iostream>
 #include "Animal.h"
 
-using namespace std;
-
-Animal::Animal()
-	: mAge(0)
+namespace samples
 {
-	cout << "Animal : constructor" << endl;
-}
+	Animal::Animal()
+		: Animal(0)
+	{
+	}
 
-Animal::Animal(int age)
-	: mAge(age)
-{
-}
+	Animal::Animal(int age)
+		: mAge(age)
+	{
+	}
 
-int Animal::GetAge() const
-{
-	return mAge;
+	int Animal::GetAge() const
+	{
+		return mAge;
+	}
 }

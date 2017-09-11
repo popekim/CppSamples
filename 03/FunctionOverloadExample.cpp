@@ -1,6 +1,6 @@
 #include <iostream>
 #include "OperatorOverloadExample.h"
-#include "Vector3.h"
+#include "Vector.h"
 
 using namespace std;
 
@@ -12,21 +12,27 @@ namespace samples
 		cout << "|       Function Overloading Example       |" << endl;
 		cout << "+------------------------------+" << endl;
 		
-		Vector3 vector1(3, 5);
-		Vector3 vector2(7, 9);
-		const float DECIMAL = 0.5f;
+		Vector vector1(3, 5);
+		Vector vector2(7, 9);
+		const int multiplier = 3;
 
-		cout << "vector1 member variables - " << vector1 << endl;
+		cout << "vector1:" << vector1.GetX() << ", " << vector1.GetY() << endl;
+		cout << "vector2:" << vector2.GetX() << ", " << vector2.GetY() << endl;
 
-		cout << "Result - Mutliply function (const Vector3&) - " << vector1.Multiply(vector1, vector2) << endl;
-		cout << "Result - Mutliply function (const float DECIMAL) - " << vector1.Multiply(vector1, DECIMAL) << endl;
+		Vector result = vector1.Multiply(vector2);
+		cout << "vector1.Multiply(vector2): " << result.GetX() << ", " << result.GetY() << endl;
 
-		cout << "vector1 member variables - " << vector1 << endl;
+		result = vector1.Multiply(multiplier);
+		cout << "vector1.Multiply(multiplier): " << result.GetX() << ", " << result.GetY() << endl;
+		cout << "vector1: " << vector1.GetX() << ", " << vector1.GetY() << endl;
 		
-		vector1.Scale(vector1, vector2);
-		cout << "Result - Scale function (const Vector3&) -  " << vector1 << endl;
+		vector1.Scale(vector2);
+		cout << "vector1.Scale(vector2);" << endl;
+		cout << "vector1: " << vector1.GetX() << ", " << vector1.GetY() << endl;
 
-		vector1.Scale(vector1, DECIMAL);
-		cout << "Result - Scale function (const float DECIMAL) -  " << vector1 << endl;
+		vector1.Scale(multiplier);
+		cout << "vector1.Scale(multiplier)" << endl;
+		cout << "vector1: " << vector1.GetX() << ", " << vector1.GetY() << endl;
+
 	}
 }

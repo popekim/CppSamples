@@ -1,6 +1,6 @@
 #include <iostream>
 #include "CopyConstructorExample.h"
-#include "MyString.h"
+#include "String.h"
 
 using namespace std;
 
@@ -12,10 +12,10 @@ namespace samples
 		cout << "|   Copy Constructor example   |" << endl;
 		cout << "+------------------------------+" << endl;
 
-		MyString myName("	John Doe");
-		MyString myNameCopy(myName);
+		String myName("	John Doe");
+		String myNameCopy(myName);
 	
-		myName.PrintString();
-		myNameCopy.PrintString();
+		myName.Print();
+		myNameCopy.Print();
 	}
 }

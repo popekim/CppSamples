@@ -9,7 +9,7 @@ namespace samples
 	void CopyConstructorExample()
 	{
 		cout << "+------------------------------+" << endl;
-		cout << "|       Copy Constructor example       |" << endl;
+		cout << "|   Copy Constructor example   |" << endl;
 		cout << "+------------------------------+" << endl;
 
 		MyString myName("	John Doe");

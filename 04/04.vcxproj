@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -111,15 +111,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Animal.h" />
+    <ClInclude Include="Bat.h" />
+    <ClInclude Include="Cat.h" />
+    <ClInclude Include="Cat1.h" />
+    <ClInclude Include="Dog.h" />
+    <ClInclude Include="IFlyable.h" />
     <ClInclude Include="InterfaceExample.h" />
+    <ClInclude Include="IWalkable.h" />
+    <ClInclude Include="Liger.h" />
+    <ClInclude Include="Lion.h" />
     <ClInclude Include="MultiInheritanceExample.h" />
     <ClInclude Include="PolymorphismExample.h" />
+    <ClInclude Include="Tiger.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animal.cpp" />
+    <ClCompile Include="Bat.cpp" />
+    <ClCompile Include="Cat.cpp" />
+    <ClCompile Include="Cat1.cpp" />
+    <ClCompile Include="Dog.cpp" />
     <ClCompile Include="InterfaceExample.cpp" />
+    <ClCompile Include="Liger.cpp" />
+    <ClCompile Include="Lion.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MultiInheritanceExample.cpp" />
     <ClCompile Include="PolymorphismExample.cpp" />
+    <ClCompile Include="Tiger.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

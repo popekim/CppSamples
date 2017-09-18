@@ -12,7 +12,7 @@ int main()
 	// 2. Multiple Inheritance... YUCK
 	MultiInheritanceExample();
 
-	// 3. Multiplying with a Vector or Scalar in Vector Class
+	// 3. Interface
 	InterfaceExample();
 
 	return 0;

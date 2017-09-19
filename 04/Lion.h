@@ -4,11 +4,11 @@
 
 namespace samples
 {
-	class Lion : public samples::Animal
+	class Lion : public Animal
 	{
 	public:
 		Lion(int age);
 
-		void DisplayLionData() const;
+		void ShowOffBeautifulHair() const;
 	};
 }

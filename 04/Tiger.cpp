@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Tiger.h"
 
+using namespace std;
+
 namespace samples
 {
 	Tiger::Tiger(int age)
@@ -8,8 +10,8 @@ namespace samples
 	{
 	}
 
-	void Tiger::DisplayTigerData() const
+	void Tiger::PretendIAmAZibra() const
 	{
-		std::cout << "I'm tiger" << std::endl;
+		cout << "I Has Zibra Stripes" << endl;
 	}
 }

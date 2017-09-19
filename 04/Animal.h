@@ -11,6 +11,8 @@ namespace samples
 		virtual void Move() const;
 		virtual void Speak() const;
 
+		int GetAge() const;
+
 	private:
 		int mAge;
 	};

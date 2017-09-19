@@ -4,12 +4,8 @@
 namespace samples
 {
 	Liger::Liger(int age)
-		: Lion(age), Tiger(age)
+		: Lion(age)
+		, Tiger(age + 1)
 	{
-	}
-
-	void Liger::DisplayLigerData() const
-	{
-		std::cout << "I'm liger" << std::endl;
 	}
 }

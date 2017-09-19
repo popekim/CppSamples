@@ -9,7 +9,5 @@ namespace samples
 	{
 	public:
 		Liger(int age);
-
-		void DisplayLigerData() const;
 	};
 }

@@ -7,13 +7,9 @@ namespace samples
 	class Dog : public Animal
 	{
 	public:
-		Dog(int age, const char* name);
-		~Dog();
+		Dog(int age);
 
-		void Move() const;
-		void Speak() const;
-
-	private:
-		char* mName;
+		virtual void Move() const;
+		virtual void Speak() const;
 	};
 }

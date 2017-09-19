@@ -3,17 +3,9 @@
 
 namespace samples
 {
-	Dog::Dog(int age, const char* name)
+	Dog::Dog(int age)
 		: Animal(age)
 	{
-		size_t length = strlen(name + 1);
-		mName = new char[length];
-		memcpy(mName, name, length);
-	}
-
-	Dog::~Dog()
-	{
-		delete[] mName;
 	}
 
 	void Dog::Move() const

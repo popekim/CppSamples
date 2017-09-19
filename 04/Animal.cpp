@@ -21,4 +21,9 @@ namespace samples
 	{
 		std::cout << "An animal is speaking" << std::endl;
 	}
+
+	int Animal::GetAge() const
+	{
+		return mAge;
+	}
 }

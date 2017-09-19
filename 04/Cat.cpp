@@ -3,17 +3,9 @@
 
 namespace samples
 {
-	Cat::Cat(int age, const char* name) 
+	Cat::Cat(int age) 
 		: Animal(age)
 	{
-		size_t length = strlen(name + 1);
-		mName = new char[length];
-		memcpy(mName, name, length);
-	}
-
-	Cat::~Cat()
-	{
-		delete[] mName;
 	}
 
 	void Cat::Move() const

@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Lion.h"
 
+using namespace std;
+
 namespace samples
 {
 	Lion::Lion(int age)
@@ -8,8 +10,8 @@ namespace samples
 	{
 	}
 
-	void Lion::DisplayLionData() const
+	void Lion::ShowOffBeautifulHair() const
 	{
-		std::cout << "I'm lion" << std::endl;
+		cout << "I'm too sexy" << endl;
 	}
 }

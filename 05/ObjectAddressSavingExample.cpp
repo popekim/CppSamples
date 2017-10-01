@@ -8,13 +8,15 @@ namespace samples
 {
 	void ObjectAddressSavingExample()
 	{
-		Tiger* tiger1 = new Tiger(5);
-		uint32_t* unit32Number = reinterpret_cast<uint32_t*>(tiger1);
+		Tiger* tiger = new Tiger(5);
+		unsigned int intAddress = reinterpret_cast<unsigned int>(tiger);
 
-		cout << unit32Number << endl; // you would save this on disk
+		cout << "saving address as int: " << intAddress << endl;
+		cout << "read int address to pointer" << endl;
 
-		//then when you load it again
-		Tiger* tiger2 = reinterpret_cast<Tiger*>(unit32Number);
-		tiger2->PretendIAmAZibra();
+		tiger = reinterpret_cast<Tiger*>(intAddress);
+		tiger->PretendIAmAZibra();
+
+		delete tiger;
 	}
 }

@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "Animal.h"
 #include "Cat.h"
 #include "Dog.h"
@@ -10,15 +11,20 @@ namespace samples
 {
 	void ObjectPointerCastingExample()
 	{
-		Animal* myPet1 = new Cat(2, "Lulu");
-		Animal* myPet2 = new Dog(2, "BCIT");
+		Animal* pet1 = new Cat(2, "Lulu");
+		Animal* pet2 = new Dog(2, "Burnaby");
 	
-		Cat* myCat = static_cast<Cat*>(myPet1);
-		Dog* myDog1 = static_cast<Dog*>(myPet2);
-		Dog* myDog2 = static_cast<Dog*>(myPet1);
+		Cat* cat = static_cast<Cat*>(pet1);
+		Dog* dog1 = static_cast<Dog*>(pet2);
+		Dog* dog2 = static_cast<Dog*>(pet1);
 
-		cout << "myCat's name : " << myCat->GetName() << endl;
-		cout << "myDog1's address :" << myDog1->GetAddress() << endl;
-		cout << "myDog2's address : " << myDog2->GetAddress() << endl;
+		cout << "cat's name : " << cat->GetName() << endl;
+		cout << "dog1's address :" << dog1->GetAddress() << endl;
+
+		// prints cat's name instead
+		cout << "dog2's address : " << dog2->GetAddress() << endl;
+
+		delete pet1;
+		delete pet2;
 	}
 }

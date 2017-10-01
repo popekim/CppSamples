@@ -7,8 +7,7 @@
 
 using namespace samples;
 
-int main()
-{
+int main(){
 	// 1. Static_Cast with values
 	ValueCastingExample();
 
@@ -16,7 +15,7 @@ int main()
 	ObjectPointerCastingExample();
 
 	// 3. Saving Address of an Cat class
-	ObjectPointerCastingExample();
+	ObjectAddressSavingExample();
 
 	// 4. Inline Function
 	InlineFunctionExample();

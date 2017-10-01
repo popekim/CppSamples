@@ -1,4 +1,6 @@
-#include<iostream>
+#include <iostream>
+#include <iomanip>
+
 #include "ValueCastingExample.h"
 
 using namespace std;
@@ -7,20 +9,17 @@ namespace samples
 {
 	void ValueCastingExample()
 	{
-		int number1 = 10;
-		short number2 = 20;
-		float number3 = 5.5f;
+		const int intNumber = 10;
 
-		cout << "int variable (hex) : " << hex << number1<< endl;
-		cout << "short variable (hex): " << hex << number2 << endl;
-		cout << "float variable (hex): " << hex << number3 << endl;
+		const float floatNumber = static_cast<float>(intNumber);
+		const int shortNumber = static_cast<short>(intNumber);
 
-		float intToFloat = static_cast<float>(number1);
-		int shortToInt = static_cast<int>(number2);
-		int floatToInt = static_cast<int>(number3);
-
-		cout << "int variable -> float variable (hex): " << hex << intToFloat << endl;
-		cout << "short variable -> int variable (hex): " << hex << shortToInt << endl;
-		cout << "float variable -> int variable (hex): " << hex << floatToInt << endl;
+		cout << showbase << hex << uppercase;
+		cout << "int: " << intNumber
+			<< ", short: " << shortNumber
+			<< endl;
+		cout << "int: " << intNumber
+			<< ", float: " << *(int*)(&floatNumber)
+			<< endl;
 	}
 }

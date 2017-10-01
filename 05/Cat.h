@@ -8,7 +8,8 @@ namespace samples
 	{
 	public:
 		Cat(int age, char* name);
-	
+		virtual ~Cat();
+
 		const char* GetName() const;
 
 	private:

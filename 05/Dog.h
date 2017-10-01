@@ -8,6 +8,7 @@ namespace samples
 	{
 	public:
 		Dog(int age, char* address);
+		virtual ~Dog();
 
 		const char* GetAddress() const;
 

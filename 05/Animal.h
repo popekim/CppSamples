@@ -6,6 +6,7 @@ namespace samples
 	{
 	public:
 		Animal(int age);
+		virtual ~Animal() {};
 
 	private:
 		int mAge;

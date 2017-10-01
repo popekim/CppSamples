@@ -6,8 +6,9 @@ namespace samples
 	{
 	public:
 		Cat2::Cat2(int age, char* name);
+		virtual ~Cat2();
 
-		char* GetType() const;
+		static char* GetType();
 
 	private:
 		static char* mAnimalType;

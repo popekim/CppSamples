@@ -8,37 +8,37 @@ namespace samples
 {
 	void VectorAddingElementsExample()
 	{
-		vector<int> scoreList;
-		scoreList.reserve(7);
+		vector<int> scores;
+		scores.reserve(7);
 
-		scoreList.push_back(30);
-		scoreList.push_back(50);
-		scoreList.push_back(80);
-		scoreList.push_back(65);
-		scoreList.push_back(73);
+		scores.push_back(30);
+		scores.push_back(50);
+		scores.push_back(80);
+		scores.push_back(65);
+		scores.push_back(73);
 
-		PrintScoreList(scoreList);
+		PrintScores(scores);
 
-		scoreList.pop_back();
-		scoreList.pop_back();
+		scores.pop_back();
+		scores.pop_back();
 
-		PrintScoreList(scoreList);
+		PrintScores(scores);
 
-		scoreList.resize(10);
+		scores.resize(10);
 
-		PrintScoreList(scoreList);
+		PrintScores(scores);
 	}
 
-	void PrintScoreList(vector<int> scoreList)
+	void PrintScores(const vector<int>& scores)
 	{
 		cout << "Current elements : ";
-		for (vector<int>::iterator  iter = scoreList.begin(); iter != scoreList.end(); ++iter)
+		for (vector<int>::const_iterator iter = scores.begin(); iter != scores.end(); ++iter)
 		{
 			cout << *iter << " ";
 		}
 		cout << endl;
 
-		cout << "Current capacity : " << scoreList.capacity() << endl;
-		cout << "Current size : " << scoreList.size() << endl << endl;
+		cout << "Current capacity : " << scores.capacity() << endl;
+		cout << "Current size : " << scores.size() << endl << endl;
 	}
 }

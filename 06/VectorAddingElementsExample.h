@@ -2,7 +2,7 @@
 
 namespace samples
 {
-	void PrintScoreList(std::vector<int> scoreList);
+	void PrintScores(const std::vector<int>& scores);
 
 	void VectorAddingElementsExample();
 }

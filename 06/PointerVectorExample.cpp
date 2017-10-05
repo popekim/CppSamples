@@ -9,38 +9,47 @@ namespace samples
 {
 	void PointerVectorExample()
 	{
-		vector<Score*> myScoreList;
-		myScoreList.reserve(5);
+		vector<Score*> scores;
+		scores.reserve(5);
 
-		myScoreList.push_back(&Score(30, "class 1"));
-		myScoreList.push_back(&Score(59, "class 2"));
-		myScoreList.push_back(&Score(87, "Java"));
-		myScoreList.push_back(&Score(74, "class 3"));
-		myScoreList.push_back(&Score(41, "class 4"));
+		Score* cppScore = new Score(30, "C++");
+		Score* algoScore = new Score(59, "Algorithm");
+		Score* javaScore = new Score(87, "Java");
+		Score* dataCommScore = new Score(74, "Data Comm");
+		Score* androidScore = new Score(41, "Android");
 
-		PrintVector(myScoreList);
+		scores.push_back(cppScore);
+		scores.push_back(algoScore);
+		scores.push_back(javaScore);
+		scores.push_back(dataCommScore);
+		scores.push_back(androidScore);
 
-		for (vector<Score*>::iterator iter = myScoreList.begin(); iter != myScoreList.end();)
+		PrintVector(scores);
 		{
-			Score* score = *iter;
-			if (score->GetClassName() == "Java")
+			vector<Score*>::iterator iter = scores.begin();
+			while (iter != scores.end())
 			{
-				iter = myScoreList.erase(iter);
-			}
-			else
-			{
-				iter++;
+				Score* score = *iter;
+				if (score->GetClassName() == "Java")
+				{
+					iter = scores.erase(iter);
+				}
+				else
+				{
+					iter++;
+				}
 			}
 		}
-		PrintVector(myScoreList);
 
-		for (vector<Score*>::iterator iter = myScoreList.begin(); iter != myScoreList.end(); ++iter)
+		PrintVector(scores);
+
+		for (vector<Score*>::iterator iter = scores.begin(); iter != scores.end(); ++iter)
 		{
-			iter = myScoreList.erase(iter);
+			iter = scores.erase(iter);
 		}
-		myScoreList.clear();
+		scores.clear();
 
-		for (vector<Score*>::iterator iter = myScoreList.begin(); iter != myScoreList.end(); ++iter)
+		for (vector<Score*>::iterator iter = scores.begin(); iter != scores.end(); ++iter)
 		{
 			Score* score = *iter;
 
@@ -49,8 +58,15 @@ namespace samples
 				score->SetScore(100);
 			}
 		}
+
 		cout << "After chaning the score of class 1" << endl;
-		PrintVector(myScoreList);
+		PrintVector(scores);
+
+		delete cppScore;
+		delete algoScore;
+		delete javaScore;
+		delete dataCommScore;
+		delete androidScore;
 	}
 
 	void PrintVector(const vector<Score*>& scores)

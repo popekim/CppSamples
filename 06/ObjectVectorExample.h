@@ -8,5 +8,5 @@ namespace samples
 {
 	void ObjectVectorExample();
 
-	void PrintVector(const std::vector<Score>& scoreList);
+	void PrintVector(const std::vector<Score>& scores);
 }

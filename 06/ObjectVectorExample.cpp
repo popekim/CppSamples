@@ -9,34 +9,36 @@ namespace samples
 {
 	void ObjectVectorExample()
 	{
-		vector<Score> myScoreList;
-		myScoreList.reserve(5);
+		vector<Score> scores;
+		scores.reserve(5);
 
-		myScoreList.push_back(Score(30, "class 1"));
-		myScoreList.push_back(Score(59, "class 2"));
-		myScoreList.push_back(Score(87, "Java"));
-		myScoreList.push_back(Score(74, "class 3"));
-		myScoreList.push_back(Score(41, "class 4"));
+		scores.push_back(Score(30, "C++"));
+		scores.push_back(Score(59, "Algorithm"));
+		scores.push_back(Score(87, "Java"));
+		scores.push_back(Score(74, "Data Comm"));
+		scores.push_back(Score(41, "Android"));
 
 		cout << "Before erasing the element" << endl;
-		PrintVector(myScoreList);
+		PrintVector(scores);
 
 		cout << "After erasing the element" << endl;
-		for (vector<Score>::iterator iter = myScoreList.begin(); iter != myScoreList.end();)
+
+		vector<Score>::iterator iter = scores.begin();
+		while (iter != scores.end())
 		{
 			if (iter->GetClassName() == "Java")
 			{
-				iter = myScoreList.erase(iter);
+				iter = scores.erase(iter);
 			}
 			else
 			{
 				iter++;
 			}
 		}
-		PrintVector(myScoreList);
+		PrintVector(scores);
 
 		cout << "After changing the score of class 1" << endl;
-		for (vector<Score>::iterator iter = myScoreList.begin(); iter != myScoreList.end(); ++iter)
+		for (vector<Score>::iterator iter = scores.begin(); iter != scores.end(); ++iter)
 		{
 			Score score = *iter;
 
@@ -45,7 +47,8 @@ namespace samples
 				score.SetScore(100);
 			}
 		}
-		PrintVector(myScoreList);
+
+		PrintVector(scores);
 	}
 	
 	void PrintVector(const vector<Score>& scores)

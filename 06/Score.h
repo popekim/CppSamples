@@ -14,7 +14,7 @@ namespace samples
 		int GetScore() const;
 		void SetScore(const int score);
 
-		string GetClassName() const;
+		const string& GetClassName() const;
 
 		void PrintVariables() const;
 

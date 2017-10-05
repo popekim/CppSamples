@@ -22,13 +22,13 @@ namespace samples
 		mScore = score;
 	}
 
-	string Score::GetClassName() const
+	const string& Score::GetClassName() const
 	{
 		return mClassName;
 	}
 
 	void Score::PrintVariables() const
 	{
-		cout << mClassName << ": " << mScore;
+		cout << mClassName << ": " << mScore << endl;
 	}
 }

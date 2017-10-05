@@ -9,7 +9,7 @@ namespace samples
 	void VectorAddingElementsExample()
 	{
 		vector<int> scores;
-		scores.reserve(7);
+		scores.reserve(5);
 
 		scores.push_back(30);
 		scores.push_back(50);

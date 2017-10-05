@@ -21,24 +21,24 @@ namespace samples
 
 	void VectorSwappingElementsExample()
 	{
-		vector<int> myScoreList;
-		myScoreList.reserve(5);
+		vector<int> scores;
+		scores.reserve(2);
 
-		myScoreList.push_back(85);
-		myScoreList.push_back(73);
+		scores.push_back(85);
+		scores.push_back(73);
 
-		cout << "myScoreList" << endl;
-		PrintScoreList(myScoreList);
+		cout << "scores" << endl;
+		PrintScoreList(scores);
 
-		vector<int> yourScoreList;
-		yourScoreList.assign(7, 100);
+		vector<int> anotherScores;
+		anotherScores.assign(7, 100);
 
-		myScoreList.swap(yourScoreList);
+		scores.swap(anotherScores);
 
-		cout << "myScoreList" << endl;
-		PrintScoreList(myScoreList);
+		cout << "scores" << endl;
+		PrintScoreList(scores);
 
-		cout << "yourScoreList" << endl;
-		PrintScoreList(yourScoreList);
+		cout << "anotherScores" << endl;
+		PrintScoreList(anotherScores);
 	}
 }

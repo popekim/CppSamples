@@ -8,10 +8,8 @@ namespace samples
 {
 	void PrintScoreList(std::vector<int> scoreList)
 	{
-		vector<int>::iterator iter;
-
 		cout << "- Current elements : ";
-		for (iter = scoreList.begin(); iter != scoreList.end(); ++iter)
+		for (vector<int>::iterator iter = scoreList.begin(); iter != scoreList.end(); ++iter)
 		{
 			cout << *iter << " ";
 		}

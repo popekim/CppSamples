@@ -6,22 +6,15 @@ using namespace std;
 
 namespace samples
 {
-	void CalculateSum(vector<int> scoreList)
+	int CalculateSum(const vector<int>& scoreList)
 	{
-		if (scoreList.empty())
-		{
-			cout << "This score list is empty. " << endl;
-		}
-		else
-		{
-			int sum = 0;
+		int sum = 0;
 
-			for (size_t i = 0; i < scoreList.size(); i++)
-			{
-				sum += scoreList.at(i);
-			}
-			cout <<  "sum : " << sum << endl << endl;
+		for (size_t i = 0; i < scoreList.size(); i++)
+		{
+			sum += scoreList[i];
 		}
+		return sum;
 	}
 
 	void VectorCalculatingSumExample()
@@ -47,9 +40,9 @@ namespace samples
 		yourScoreList.clear();
 
 		cout << "myScoreList" << endl;
-		CalculateSum(myScoreList);
+		cout << "Sum : " << CalculateSum(myScoreList) << endl << endl;
 
 		cout << "yourScoreList" << endl;
-		CalculateSum(yourScoreList);
+		cout << "Sum : " << CalculateSum(yourScoreList) << endl << endl;
 	}
 }

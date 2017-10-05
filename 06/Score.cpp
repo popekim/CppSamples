@@ -6,9 +6,15 @@ using namespace std;
 
 namespace samples
 {
-	void Score::PrintVariables() const
+	Score::Score(int score, const string& className)
+		: mScore(score)
+		, mClassName(className)
 	{
-		cout << "(" << mScore << ", " << mClassName << ")" << " ";
+	}
+
+	int Score::GetScore() const
+	{
+		return mScore;
 	}
 
 	string Score::GetClassName() const
@@ -16,8 +22,15 @@ namespace samples
 		return mClassName;
 	}
 
-	Score::Score(int score, const string className)
-		: mScore(score), mClassName(className)
+	void Score::PrintVariables() const
 	{
+		cout << mClassName << ": " << mScore;
 	}
-}
+	
+	void Score::SetScore(const int& score)
+	{
+		mScore = score;
+	}
+
+
+

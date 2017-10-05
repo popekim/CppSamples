@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <iostream>
 #include <vector>
 #include "ObjectVectorExample.h"
@@ -15,29 +14,46 @@ namespace samples
 
 		myScoreList.push_back(Score(30, "class 1"));
 		myScoreList.push_back(Score(59, "class 2"));
-		myScoreList.push_back(Score(87, "Introducing C++"));
+		myScoreList.push_back(Score(87, "Java"));
 		myScoreList.push_back(Score(74, "class 3"));
 		myScoreList.push_back(Score(41, "class 4"));
 
-		cout << "Before erasing the element : ";
-		for (vector<Score>::iterator iter = myScoreList.begin(); iter != myScoreList.end(); iter++)
-		{
-			(*iter).PrintVariables();
-		}
-		cout << endl;
+		cout << "Before erasing the element" << endl;
+		PrintVector(myScoreList);
 
-		cout << "After erasing the element : ";
+		cout << "After erasing the element" << endl;
 		for (vector<Score>::iterator iter = myScoreList.begin(); iter != myScoreList.end();)
 		{
-			if ((*iter).GetClassName() == "Introducing C++")
+			if (iter->GetClassName() == "Java")
 			{
 				iter = myScoreList.erase(iter);
 			}
 			else
 			{
-				(*iter).PrintVariables();
 				iter++;
 			}
 		}
+		PrintVector(myScoreList);
+
+		cout << "After changing the score of class 1" << endl;
+		for (vector<Score>::iterator iter = myScoreList.begin(); iter != myScoreList.end(); ++iter)
+		{
+			Score score = *iter;
+
+			if (score.GetScore() == 30)
+			{
+				score.SetScore(100);
+			}
+		}
+		PrintVector(myScoreList);
+	}
+	
+	void PrintVector(vector<Score>& scoreList)
+	{
+		for (vector<Score>::iterator iter = scoreList.begin(); iter != scoreList.end(); iter++)
+		{
+			iter->PrintVariables();
+		}
+		cout << endl;
 	}
 }

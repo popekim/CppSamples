@@ -2,7 +2,7 @@
 
 namespace samples
 {
-	int CalculateSum(const std::vector<int>& scoreList);
+	int CalculateSum(const std::vector<int>& scores);
 
 	void VectorCalculatingSumExample();
 }

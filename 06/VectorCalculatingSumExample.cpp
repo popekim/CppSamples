@@ -6,43 +6,44 @@ using namespace std;
 
 namespace samples
 {
-	int CalculateSum(const vector<int>& scoreList)
+	int CalculateSum(const vector<int>& scores)
 	{
 		int sum = 0;
 
-		for (size_t i = 0; i < scoreList.size(); i++)
+		for (size_t i = 0; i < scores.size(); i++)
 		{
-			sum += scoreList[i];
+			sum += scores[i];
 		}
+
 		return sum;
 	}
 
 	void VectorCalculatingSumExample()
 	{
-		vector<int> myScoreList;
-		vector<int> yourScoreList;
+		vector<int> myScores;
+		myScores.reserve(5);
 
-		myScoreList.reserve(5);
-		yourScoreList.reserve(5);
+		vector<int> yourScores;
+		yourScores.reserve(5);
 
-		myScoreList.push_back(13);
-		myScoreList.push_back(21);
-		myScoreList.push_back(35);
-		myScoreList.push_back(76);
-		myScoreList.push_back(94);
+		myScores.push_back(13);
+		myScores.push_back(21);
+		myScores.push_back(35);
+		myScores.push_back(76);
+		myScores.push_back(94);
 
-		yourScoreList.push_back(61);
-		yourScoreList.push_back(27);
-		yourScoreList.push_back(83);
-		yourScoreList.push_back(91);
-		yourScoreList.push_back(100);
+		yourScores.push_back(61);
+		yourScores.push_back(27);
+		yourScores.push_back(83);
+		yourScores.push_back(91);
+		yourScores.push_back(100);
 
-		yourScoreList.clear();
+		yourScores.clear();
 
-		cout << "myScoreList" << endl;
-		cout << "Sum : " << CalculateSum(myScoreList) << endl << endl;
+		cout << "myScores" << endl;
+		cout << "Sum : " << CalculateSum(myScores) << endl << endl;
 
-		cout << "yourScoreList" << endl;
-		cout << "Sum : " << CalculateSum(yourScoreList) << endl << endl;
+		cout << "yourScores" << endl;
+		cout << "Sum : " << CalculateSum(yourScores) << endl << endl;
 	}
 }

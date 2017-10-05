@@ -1,8 +1,12 @@
 #pragma once
 
+#include <vector>
+
+#include "Score.h"
+
 namespace samples
 {
 	void PointerVectorExample();
 	
-	void PrintVector(std::vector<Score*>& scoreList);
+	void PrintVector(const std::vector<Score*>& scores);
 }

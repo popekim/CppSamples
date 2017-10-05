@@ -48,9 +48,9 @@ namespace samples
 		PrintVector(myScoreList);
 	}
 	
-	void PrintVector(vector<Score>& scoreList)
+	void PrintVector(const vector<Score>& scores)
 	{
-		for (vector<Score>::iterator iter = scoreList.begin(); iter != scoreList.end(); iter++)
+		for (vector<Score>::const_iterator iter = scores.begin(); iter != scores.end(); ++iter)
 		{
 			iter->PrintVariables();
 		}

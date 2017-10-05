@@ -17,6 +17,11 @@ namespace samples
 		return mScore;
 	}
 
+	void Score::SetScore(const int score)
+	{
+		mScore = score;
+	}
+
 	string Score::GetClassName() const
 	{
 		return mClassName;
@@ -26,11 +31,4 @@ namespace samples
 	{
 		cout << mClassName << ": " << mScore;
 	}
-	
-	void Score::SetScore(const int& score)
-	{
-		mScore = score;
-	}
-
-
-
+}

@@ -6,17 +6,17 @@ using namespace std;
 
 namespace samples
 {
-	void PrintScoreList(std::vector<int> scoreList)
+	void PrintScoreList(const std::vector<int>& scores)
 	{
 		cout << "- Current elements : ";
-		for (vector<int>::iterator iter = scoreList.begin(); iter != scoreList.end(); ++iter)
+		for (vector<int>::const_iterator iter = scores.begin(); iter != scores.end(); ++iter)
 		{
 			cout << *iter << " ";
 		}
 		cout << endl;
 
-		cout << "- Current capacity : " << scoreList.capacity() << endl;
-		cout << "- Current size : " << scoreList.size() << endl << endl;
+		cout << "- Current capacity : " << scores.capacity() << endl;
+		cout << "- Current size : " << scores.size() << endl << endl;
 	}
 
 	void VectorSwappingElementsExample()

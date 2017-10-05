@@ -1,10 +1,12 @@
-#include "Score.h"
-
 #pragma once
 
+#include <vector>
+
+#include "Score.h"
+
 namespace samples
-{	
+{
 	void ObjectVectorExample();
 
-	void PrintVector(std::vector<Score>& scoreList);
+	void PrintVector(const std::vector<Score>& scoreList);
 }

@@ -2,14 +2,21 @@
 
 namespace samples
 {
-	template <typename T, typename U>
-	class Math
+	namespace Math
 	{
-	public:
-		int Add(T value1, U value2) const;
-		int Divide(T value1, U value2) const;
-		int Max(T value1, U value2) const;
-		int Multiply(T value1, U value2) const;
-		int Min(T value1, U value2) const;
-	};
+		template <typename T>
+		static int Add(T value1, T value2);
+		
+		template <typename T>
+		static int Divide(T value1, T value2);
+		
+		template <typename T>
+		static int Max(T value1, T value2);
+		
+		template <typename T>
+		static int Multiply(T value1, T value2);
+		
+		template <typename T>
+		static int Min(T value1, T value2);
+	}
 }

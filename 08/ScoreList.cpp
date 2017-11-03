@@ -4,7 +4,7 @@
 
 namespace samples
 {
-	ScoreList::ScoreList(int score, std::string studentName)
+	ScoreList::ScoreList(int score, const std::string& studentName)
 		: mScore(score)
 		, mStudentName(studentName)
 	{

@@ -2,16 +2,20 @@
 
 namespace samples
 {
-	template <typename Input, typename T>
-	Input Algorithm::Find(Input* first, Input* last, const T& value)
+	namespace Alogorithm
 	{
-		while (first != last)
+		template <typename Input, typename T>
+		Input* Algorithm::Find(Input* first, Input* last, const T& value)
 		{
-			if (*first == value)
+			while (first != last)
 			{
-				return first;
+				if (*first == value)
+				{
+					return first;
+				}
+				++first;
 			}
-			++first;
+			return last;
 		}
 	}
 }

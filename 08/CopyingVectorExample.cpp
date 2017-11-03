@@ -10,16 +10,16 @@ namespace samples
 {
 	void CopyingVectorExample()
 	{
-		vector<ScoreList> scoreList;
+		vector<ScoreList> scores;
 
-		scoreList.push_back(ScoreList(50, "Lulu"));
-		scoreList.push_back(ScoreList(32, "Blitz"));
-		scoreList.push_back(ScoreList(90, "Heimerdinger"));
+		scores.push_back(ScoreList(50, "Lulu"));
+		scores.push_back(ScoreList(32, "Blitz"));
+		scores.push_back(ScoreList(90, "Heimerdinger"));
 
-		vector<ScoreList> copiedScoreList;
-		copy(scoreList.begin(), scoreList.end(), copiedScoreList.begin());
+		vector<ScoreList> copiedScores;
+		copy(scores.begin(), scores.end(), copiedScores.begin());
 
-		for (vector<ScoreList>::iterator it = copiedScoreList.begin(); it != copiedScoreList.end(); it++)
+		for (vector<ScoreList>::iterator it = copiedScores.begin(); it != copiedScores.end(); it++)
 		{
 			it->Print();
 		}

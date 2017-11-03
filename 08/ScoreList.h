@@ -6,7 +6,7 @@ namespace samples
 	class ScoreList
 	{
 	public:
-		ScoreList(int score, std::string studentName);
+		ScoreList(int score, const std::string& studentName);
 		void Print() const;
 
 	private:

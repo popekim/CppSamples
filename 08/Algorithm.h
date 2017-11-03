@@ -4,10 +4,9 @@
 
 namespace samples
 {
-	template <typename Input, typename T>
-	class Algorithm
+	namespace Algorithm
 	{
-	public:
-		Input Find(Input* first, Input* last, const T& value);
+		template <typename Input, typename T>
+		Input* Find(Input* first, Input* last, const T& value);
 	};
 };

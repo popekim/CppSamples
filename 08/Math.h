@@ -5,18 +5,33 @@ namespace samples
 	namespace Math
 	{
 		template <typename T>
-		static int Add(T value1, T value2);
+		static T Add(T value1, T value2)
+		{
+			return value1 + value2;
+		}
 		
 		template <typename T>
-		static int Divide(T value1, T value2);
+		static T Divide(T value1, T value2)
+		{
+			return value1 / value2;
+		}
 		
 		template <typename T>
-		static int Max(T value1, T value2);
+		static T Max(T value1, T value2)
+		{
+			return value1 < value2 ? value2 : value1;
+		}
 		
 		template <typename T>
-		static int Multiply(T value1, T value2);
+		static T Multiply(T value1, T value2)
+		{
+			return value1 < value2 ? value1 : value2;
+		}
 		
 		template <typename T>
-		static int Min(T value1, T value2);
+		static T Min(T value1, T value2)
+		{
+			return value1 * value2;
+		}
 	}
 }

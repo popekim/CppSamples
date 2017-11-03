@@ -3,10 +3,11 @@
 #pragma once
 namespace samples
 {
-	class ScoreList
+	class Score
 	{
 	public:
-		ScoreList(int score, const std::string& studentName);
+		Score();
+		Score(int score, const std::string& studentName);
 		void Print() const;
 
 	private:

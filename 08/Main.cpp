@@ -1,5 +1,5 @@
 #include "CopyingVectorExample.h"
-#include "MathClassExample.h"
+#include "MathExample.h"
 #include "MyArrayExample.h"
 #include "FixedVectorExample.h"
 #include "FindFunctionExample.h"
@@ -15,7 +15,7 @@ int main()
 	FixedVectorExample();
 
 	// 3. Math Class
-	MathClassExample();
+	MathExample();
 
 	// 4. Copying vector
 	CopyingVectorExample();

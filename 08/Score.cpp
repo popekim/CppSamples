@@ -1,16 +1,21 @@
 #include <iostream>
 #include <string>
-#include "ScoreList.h"
+#include "Score.h"
 
 namespace samples
 {
-	ScoreList::ScoreList(int score, const std::string& studentName)
+	Score::Score()
+		: mScore(0)
+	{
+	}
+
+	Score::Score(int score, const std::string& studentName)
 		: mScore(score)
 		, mStudentName(studentName)
 	{
 	}
 
-	void ScoreList::Print() const
+	void Score::Print() const
 	{
 		std::cout << "<" << mStudentName << ", " << mScore << ">" << std::endl;
 	}
